@@ -47,7 +47,9 @@ Conversion of a natural number x to the corresponding element of Fin n
   - In Idris : `weakenLTE : Fin n -> LTE n m -> Fin m`
 - Left and right injections only in Agda
   - left Agda :  `_↑ˡ_ : ∀ {m} → Fin m → ∀ n → Fin (m ℕ.+ n)`
-  - right Agda : `_↑ʳ_ : ∀ {m} n → Fin m → Fin (n ℕ.+ m)` 
+  - right Agda : `_↑ʳ_ : ∀ {m} n → Fin m → Fin (n ℕ.+ m)`
+-  Add some natural number to a Fin, extending the bound accordingly
+  - Idris : `shift : (m : Nat) -> Fin n -> Fin (m + n)`
 
 ### Reduction 
 - Tighten the bound on a Fin. Agda ask for `n ≢ toℕ i` while Idris attempt to return the tighten bound if there is one, otherwise it returns nothing.  
@@ -61,10 +63,20 @@ Conversion of a natural number x to the corresponding element of Fin n
   - Idris : `DecEq` for equality and `Ord` to compare
 - Convert Fin n to Fin m using the proof that m = n
   - Agda : `cast : .(m ≡ n) → Fin m → Fin n`
-  - Idris : `coerce : {n : Nat} -> (0 eq : m = n) -> Fin m -> Fin n`
+  - Idris : `coerce : {n : Nat} -> (0 eq : m = n) -> Fin m -> Fin n`*
+  - Idris : ``` Eq (Fin n) where
+                  x == y = finToNat x == finToNat y ```
+
+### Show ~~
+- almost the same
+  - In Agda :  `show : ∀ {n} → Fin n → String`
+  - In Idris  : [`Show (Fin n) where show = show . finToInteger `](https://github.com/agda/agda-stdlib/blob/master/src/Data/Fin/Show.agda)
  
-### Get all the elements of Fin 
-- all the Fin elements in a list 
+### Get all the elements of Fin ~~~
+- all the Fin elements in a list
+  - In Idris : `allFins : (n : Nat) -> List (Fin n)`
+  - In Idrid : `allFins : (n : Nat) -> List1 (Fin (S n))`
+    
  
    
     
