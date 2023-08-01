@@ -61,7 +61,10 @@ Conversion of a natural number x to the corresponding element of Fin n
   - Idris : `DecEq` for equality and `Ord` to compare
 - Convert Fin n to Fin m using the proof that m = n
   - Agda : `cast : .(m ≡ n) → Fin m → Fin n`
-  - Idris : `coerce : {n : Nat} -> (0 eq : m = n) -> Fin m -> Fin n` 
+  - Idris : `coerce : {n : Nat} -> (0 eq : m = n) -> Fin m -> Fin n`
+ 
+### Get all the elements of Fin 
+- all the Fin elements in a list 
  
    
     
