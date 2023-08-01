@@ -31,8 +31,9 @@ Conversion of a natural number x to the corresponding element of Fin n
   - In Idris : `natToFin : Nat -> (n : Nat) -> Maybe (Fin n)`  returns an element of `Fin n` only if the first argument is lower than n.
 - Conversion from an Integer, only exist in Idris 
   - `integerToFin : Integer -> (n : Nat) -> Maybe (Fin n)` same as `natToFin` but takes an Integer
-  -  `finFromInteger` same as `natToFinLt` but takes `(x : Integer)` instead of `(x : Nat)`
-  -   `fromInteger : (x : Integer) -> {auto 0 prf : So (integerLessThanNat x n)} -> Fin n` uses a proof `integerLessThanNat : Integer -> Nat -> Bool` that cheks if `x < n` without slowing down typechecking.
+  - `finFromInteger` same as `natToFinLt` but takes `(x : Integer)` instead of `(x : Nat)`
+  - `fromInteger : (x : Integer) -> {auto 0 prf : So (integerLessThanNat x n)} -> Fin n` uses a proof `integerLessThanNat : Integer -> Nat -> Bool` that cheks if `x < n` without slowing down typechecking.
+  - `restrict : (n : Nat) -> Integer -> Fin (S n)` Convert an Integer to a Fin in the required bounds.
 
 ### Injections 
 - Weaken the bound on a Fin by 1. Transform an element of `Fin n` to one of `Fin n+1`
@@ -53,6 +54,13 @@ Conversion of a natural number x to the corresponding element of Fin n
   - In Agda : `lower₁ : ∀ (i : Fin (suc n)) → n ≢ toℕ i → Fin n`
   - In Agda : `strengthen : ∀ (i : Fin n) → Fin′ (suc i)` returns a Set Fin and not an element of Fin n
   - In Idris : `strengthen : {n : _} -> Fin (S n) -> Maybe (Fin n)`
+
+### Comparaison 
+- Define order between Fin elements
+  - Agda : `Ordering`
+  - Idris : `DecEq` for equality and `Ord` to compare
+ 
+   
     
 
 
