@@ -17,7 +17,7 @@
 |[`cast : .(m ≡ n) → Fin m → Fin n`](https://github.com/agda/agda-stdlib/blob/master/src/Data/Fin.agda)|[`coerce : {n : Nat} -> (0 eq : m = n) -> Fin m -> Fin n`](https://github.com/idris-lang/Idris2/blob/main/libs/base/Data/Fin.idr)|
 |[`show : ∀ {n} → Fin n → String`](https://github.com/agda/agda-stdlib/blob/master/src/Data/Fin.agda)|[`Show (Fin n) where show = show . finToInteger `](https://github.com/idris-lang/Idris2/blob/main/libs/base/Data/Fin.idr)|
 
-|[``](https://github.com/agda/agda-stdlib/blob/master/src/Data/Fin.agda)|[``](https://github.com/idris-lang/Idris2/blob/main/libs/base/Data/Fin.idr)|
+
 
 
 Only in Idris
@@ -30,5 +30,5 @@ Only in Idris
 ||[`restrict : (n : Nat) -> Integer -> Fin (S n)`](https://github.com/idris-lang/Idris2/blob/main/libs/base/Data/Fin.idr)|
 ||[`Eq (Fin n) where x == y = finToNat x == finToNat y`](https://github.com/idris-lang/Idris2/blob/main/libs/base/Data/Fin.idr)|
 ||[`shift : (m : Nat) -> Fin n -> Fin (m + n)`](https://github.com/idris-lang/Idris2/blob/main/libs/base/Data/Fin.idr)|
-
-
+||[`allFins : (n : Nat) -> List (Fin n)`](https://github.com/idris-lang/Idris2/blob/main/libs/base/Data/Fin.idr)|
+||[`allFins : (n : Nat) -> List1 (Fin (S n))`](https://github.com/idris-lang/Idris2/blob/main/libs/base/Data/Fin.idr)|
